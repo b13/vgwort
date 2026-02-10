@@ -1,0 +1,37 @@
+{
+	"name": "b13/vgwort",
+	"type": "typo3-cms-extension",
+	"description": "VG Wort tracking pixel for your TYPO3 pages",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": "^8.2",
+		"typo3/cms-core": "^14"
+	},
+	"require-dev": {
+		"typo3/testing-framework": "^9.1",
+		"phpunit/phpunit": "^11.3"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "vgwort"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"B13\\Vgwort\\": "Classes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"B13\\Vgwort\\Tests\\": "Tests/"
+		}
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin",
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		}
+	}
+}

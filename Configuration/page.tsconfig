@@ -1,0 +1,15 @@
+# add VG Wort info overview for Info module
+mod.web_info.fieldDefinitions {
+  vgwort {
+    label = LLL:vgwort.db:web_info.vgwort.label
+    fields = title,tx_vgwort_pixel,slug
+  }
+}
+
+# Hide VG Wort fields by default
+# Site packages with vgwort dependency should include the b13/vgwort site set
+# which re-enables these fields
+TCEFORM.pages {
+  tx_vgwort_ignore.disabled = 1
+  tx_vgwort_pixel.disabled = 1
+}
