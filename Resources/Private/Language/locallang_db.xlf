@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" product-name="vgwort.db">
+		<header/>
+		<body>
+			<trans-unit id="web_info.vgwort.label">
+				<source>VG Wort Tracking Overview</source>
+			</trans-unit>
+			<trans-unit id="pages.tabs.vgwort">
+				<source>VG Wort</source>
+			</trans-unit>
+			<trans-unit id="pages.palettes.vgwort_tracking">
+				<source>Tracking</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_vgwort_pixel">
+				<source>Tracking Pixel</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_vgwort_pixel.description">
+				<source>Public identification code (Öffentlicher Identifikationscode)</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_vgwort_ignore">
+				<source>Ignore for VG Wort</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_vgwort_ignore.description">
+				<source>Exclude this page from VG Wort tracking. Use for pages like imprint, privacy policy, or contact forms that don't need tracking.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

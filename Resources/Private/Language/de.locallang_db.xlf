@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" product-name="vgwort.db">
+		<header/>
+		<body>
+			<trans-unit id="web_info.vgwort.label">
+				<source>VG Wort Tracking Overview</source>
+				<target>VG Wort Tracking-Übersicht</target>
+			</trans-unit>
+			<trans-unit id="pages.tabs.vgwort">
+				<source>VG Wort</source>
+				<target>VG Wort</target>
+			</trans-unit>
+			<trans-unit id="pages.palettes.vgwort_tracking">
+				<source>Tracking</source>
+				<target>Tracking</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_vgwort_pixel">
+				<source>Tracking Pixel</source>
+				<target>Zählpixel</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_vgwort_pixel.description">
+				<source>Public identification code (Öffentlicher Identifikationscode)</source>
+				<target>Öffentlicher Identifikationscode</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_vgwort_ignore">
+				<source>Ignore for VG Wort</source>
+				<target>Für VG Wort ignorieren</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_vgwort_ignore.description">
+				<source>Exclude this page from VG Wort tracking. Use for pages like imprint, privacy policy, or contact forms that don't need tracking.</source>
+				<target>Diese Seite vom VG Wort Tracking ausschließen. Verwenden für Seiten wie Impressum, Datenschutzerklärung oder Kontaktformulare, die kein Tracking benötigen.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

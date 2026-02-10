@@ -1,0 +1,4 @@
+TCEFORM.pages {
+  tx_vgwort_ignore.disabled = 0
+  tx_vgwort_pixel.disabled = 0
+}

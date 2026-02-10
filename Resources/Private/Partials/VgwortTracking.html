@@ -1,0 +1,10 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:if condition="{vgwort_pixel}">
+    <img src="https://{vgwort_domain -> f:or(default: 'vg08')}.met.vgwort.de/na/{vgwort_pixel}" width="1" height="1" alt="" style="display: none" loading="eager"/>
+</f:if>
+
+</html>

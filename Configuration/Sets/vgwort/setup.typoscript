@@ -1,0 +1,6 @@
+page.1 = TEXT
+page.1 {
+  field = tx_vgwort_pixel
+  wrap = <img src="https://{$vgwort.domain}.met.vgwort.de/na/|" width="1" height="1" alt="" style="display:none" loading="eager"/>
+  required = 1
+}

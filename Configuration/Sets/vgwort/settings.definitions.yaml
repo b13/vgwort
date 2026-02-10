@@ -1,0 +1,6 @@
+settings:
+  vgwort.domain:
+    label: 'VG Wort Server Domain'
+    description: 'The VG Wort server subdomain (vg01-vg09). Check your pixel order for the correct value.'
+    type: string
+    default: 'vg08'
