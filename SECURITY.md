@@ -35,11 +35,20 @@ The extension stores one value per page: the VG Wort pixel code in `pages.tx_vgw
 It is not personal data, and it is public by design—the pixel is rendered into the page and
 visible to every visitor.
 
-At render time the extension emits an image tag pointing at `met.vgwort.de`. Loading it
-transmits the visitor's IP address and user agent to VG Wort, which is what makes the access
-countable. That transfer is the purpose of the extension, and it happens on every page
-carrying a pixel. Deciding whether it is lawful for a given site, and disclosing it in the
-site's privacy policy, is the operator's responsibility.
+At render time the extension emits an image tag pointing at `met.vgwort.de`. The visitor's
+browser fetches it, which is what makes the access countable, and VG Wort sets a session
+cookie so the same reader is not counted twice in one session. That request happens on every
+page carrying a pixel.
+
+VG Wort states that no personal data is processed in the course of this counting, and that
+therefore neither the GDPR nor—in their reading—the consent requirement of § 25 (1) TDDDG
+applies. Their *Teilnahmebedingungen* set that out in full, and offer a passage you can put
+in your privacy policy. The counting itself is carried out for VG Wort by Fifty5Blue
+Deutschland GmbH.
+
+We report their position rather than form one. What to disclose, and whether to gate the
+pixel behind consent, is the operator's decision—see the README for why gating it is not
+free.
 
 The extension sends nothing to b13 and stores no visitor data of its own.
 

@@ -114,9 +114,39 @@ extension that does that part.
   hand here as well, by putting the same pixel in several pixel fields—what Pro
   adds is that reading order, extract, and URL list stay in step with the pages.
 
-## Privacy & GDPR
+## Privacy, Cookies, and Consent Banners
 
-VG Wort tracking may be subject to local data protection regulations. It is the responsibility of the site operator to ensure compliance with applicable privacy laws.
+**Do not put the pixel behind a consent banner without checking whether you have
+to.** A pixel that only renders after someone clicks "accept" counts a fraction of
+the accesses, and the counts are what the whole thing is for.
+
+VG Wort states its own position in the *Teilnahmebedingungen für das Online
+Meldesystem T.O.M.* (July 2026 edition), section 5:
+
+> Klarstellend möchten wir Sie darauf hinweisen, dass im Rahmen der
+> METIS-Zugriffszählung keine personenbezogenen Daten verarbeitet werden. Vor
+> diesem Hintergrund finden die Regelungen der Datenschutzgrundverordnung (DSGVO)
+> und des Bundesdatenschutzgesetzes (BDSG) keine Anwendung auf die
+> METIS-Zugriffszählung.
+>
+> Zudem unterliegt die METIS-Zugriffszählung – einschließlich des dort verwendete
+> Session-Cookies – nach unserer Rechtsauffassung auch nicht dem
+> Einwilligungsbedürfnis nach § 25 Abs. 1 Telekommunikation-Digitale-Dienste-
+> Datenschutz-Gesetz (TDDDG).
+
+That is VG Wort's reading, not ours and not legal advice—the decision belongs to
+whoever answers for privacy on your site. What it does mean is that treating the
+pixel as ordinary consent-gated tracking is a choice with a price, not the obvious
+default.
+
+The same document offers a ready-made passage for your privacy policy, headed
+*Cookies und Meldungen zu Zugriffszahlen*, which explains the pixel, the client ID,
+and the session cookie. Take it from the current *Teilnahmebedingungen* rather than
+from here, so you quote the version that is in force.
+
+Two facts you need for a processor list either way: the counting is carried out for
+VG Wort by Fifty5Blue Deutschland GmbH, Saarbrücken, and the session cookie exists
+to stop the same reader being counted twice within one browser session.
 
 ## License
 
