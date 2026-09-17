@@ -6,7 +6,10 @@ This is the **basic extension** providing pixel tracking only. For pixel pool ma
 
 ## TYPO3 compatibility
 
-This extension supports **TYPO3 v14 LTS**.
+This extension supports **TYPO3 v13 LTS and v14 LTS**, on PHP 8.2 and above.
+Both majors are covered by the test suite on every change.
+
+Release notes live in [CHANGELOG.md](CHANGELOG.md).
 
 ## Installation
 
