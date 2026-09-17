@@ -22,7 +22,10 @@
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "vgwort",
-			"version": "1.0.0"
+			"version": "1.0.0",
+			"Package": {
+				"providesPackages": {}
+			}
 		}
 	},
 	"autoload": {
