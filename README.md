@@ -101,9 +101,12 @@ VG Wort tracking may be subject to local data protection regulations. It is the 
 
 Like TYPO3 Core, `EXT:vgwort` is licensed under **GPL-2.0-or-later**.
 
-## Background, authors & maintenance
+## Credits
 
-This extension was created by David Steeb in 2025 for [b13 GmbH, Stuttgart](https://b13.com).
+VG Wort was created by David Steeb and is maintained by
+[b13 GmbH](https://b13.com), Stuttgart, Germany.
 
-[Find more TYPO3 extensions we have developed](https://b13.com/useful-typo3-extensions-from-b13-to-you) that help us deliver value in client projects. As part of our work,
-we focus on testing and best practices to ensure long-term performance, reliability, and results in all our code.
+[Find more TYPO3 extensions we have developed](https://b13.com/useful-typo3-extensions-from-b13-to-you?utm_source=vgwort&utm_medium=readme)
+that help us deliver value in client projects. As part of our work, we focus on
+testing and best practices to ensure long-term performance, reliability, and
+results in all our code.

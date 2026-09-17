@@ -1,0 +1,43 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  tests:
+    name: TYPO3 ${{ matrix.typo3 }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # Both majors the extension declares support for. A test run against
+        # only one of them says nothing about the other, and the compatibility
+        # window is the promise this extension makes.
+        typo3: ['^13', '^14']
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          extensions: intl, mbstring, json, zip, curl
+
+      - name: Install dependencies
+        run: |
+          composer require --no-update "typo3/cms-core:${{ matrix.typo3 }}"
+          composer update --prefer-dist --no-progress
+
+      - name: Validate composer.json
+        run: composer validate --no-check-publish --strict
+
+      - name: Lint PHP
+        run: find Classes Tests -name "*.php" -print0 | xargs -0 -n1 -P4 php -l > /dev/null
+
+      - name: Unit tests
+        run: .Build/bin/phpunit -c Build/phpunit/UnitTests.xml

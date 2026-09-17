@@ -3,6 +3,14 @@
 	"type": "typo3-cms-extension",
 	"description": "VG Wort tracking pixel for your TYPO3 pages",
 	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "b13 GmbH",
+			"email": "typo3@b13.com",
+			"homepage": "https://b13.com",
+			"role": "Developer"
+		}
+	],
 	"require": {
 		"php": "^8.2",
 		"typo3/cms-core": "^13 || ^14"
