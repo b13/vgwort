@@ -82,16 +82,34 @@ The extension adds a **VG Wort Tracking Overview** to the Info module (Web > Inf
 
 ## Upgrading to VG Wort Pro
 
-For pixel pool management, METIS API text registration, author management, and a dashboard widget, **VG Wort Pro** is available as a separate extension. Contact [b13](https://b13.com) for more information.
+This extension gives you the field and puts the pixel on the page. Everything
+around it stays manual: where the pixels come from, which ones are still free,
+which text a pixel belongs to, who wrote it, and the report to VG Wort itself.
+For a handful of texts that is fine. It stops being fine at a few hundred pages
+and more than one author.
 
-VG Wort Pro builds on top of this extension and adds:
+**VG Wort Pro** is a separate extension that does that part. Contact
+[b13](https://b13.com) for more information.
 
-- **Pixel Pool** — import/order pixels, auto-assign to pages
-- **Lock field** — pixel field becomes read-only once filled
-- **Author management** — create/verify authors with VG Wort card numbers
-- **Text registration** — extract page content and submit to VG Wort METIS API
-- **Sync** — sync existing registrations from VG Wort
-- **Dashboard widget** — overview of tracking status across sites
+- **Pixel pool.** Import pixels from CSV or order them through the API, then
+  assign one to a page by picking it from the pool. Pro keeps track of which are
+  free and which are taken, and says so before you run out—instead of a
+  spreadsheet next to the backend.
+- **Authors** with their VG Wort card numbers, checked against VG Wort before a
+  text goes out.
+- **Text extraction** from the page as it is actually delivered, not assembled
+  from database fields, so the reported text is the published one.
+- **Reporting.** Pro builds the METIS report and sends it, and reads existing
+  registrations back from VG Wort, so the backend shows what has been reported
+  and what has not.
+- **Checks before sending**, because **a report cannot be corrected** afterwards:
+  the same pixel on two pages, a page that does not actually deliver its pixel, a
+  text that changed since it was prepared, a language missing a part, a METIS
+  limit exceeded.
+- **Texts spread over several pages** as one report: one pixel across all parts,
+  one extract, one webrange with every URL in reading order. You can do that by
+  hand here as well, by putting the same pixel in several pixel fields—what Pro
+  adds is that reading order, extract, and URL list stay in step with the pages.
 
 ## Privacy & GDPR
 
