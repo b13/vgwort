@@ -43,8 +43,8 @@ page carrying a pixel.
 VG Wort states that no personal data is processed in the course of this counting, and that
 therefore neither the GDPR nor—in their reading—the consent requirement of § 25 (1) TDDDG
 applies. Their *Teilnahmebedingungen* set that out in full, and offer a passage you can put
-in your privacy policy. The counting itself is carried out for VG Wort by Fifty5Blue
-Deutschland GmbH.
+in your privacy policy; this is the July 2026 edition, checked 17 September 2026. The
+counting itself is carried out for VG Wort by Fifty5Blue Deutschland GmbH.
 
 We report their position rather than form one. What to disclose, and whether to gate the
 pixel behind consent, is the operator's decision—see the README for why gating it is not

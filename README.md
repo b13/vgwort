@@ -121,7 +121,7 @@ to.** A pixel that only renders after someone clicks "accept" counts a fraction 
 the accesses, and the counts are what the whole thing is for.
 
 VG Wort states its own position in the *Teilnahmebedingungen für das Online
-Meldesystem T.O.M.* (July 2026 edition), section 5:
+Meldesystem T.O.M.*, section 5—July 2026 edition, checked 17 September 2026:
 
 > Klarstellend möchten wir Sie darauf hinweisen, dass im Rahmen der
 > METIS-Zugriffszählung keine personenbezogenen Daten verarbeitet werden. Vor
@@ -142,7 +142,8 @@ default.
 The same document offers a ready-made passage for your privacy policy, headed
 *Cookies und Meldungen zu Zugriffszahlen*, which explains the pixel, the client ID,
 and the session cookie. Take it from the current *Teilnahmebedingungen* rather than
-from here, so you quote the version that is in force.
+from here, so you quote the version that is in force—and check the edition date
+while you are there, because this section was written against the one named above.
 
 Two facts you need for a processor list either way: the counting is carried out for
 VG Wort by Fifty5Blue Deutschland GmbH, Saarbrücken, and the session cookie exists
