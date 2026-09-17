@@ -2,7 +2,7 @@
 
 Adds a VG Wort tracking pixel field to TYPO3 pages and renders the pixel in the frontend.
 
-This is the **basic extension** providing pixel tracking only. For pixel pool management, METIS API integration, text registration, and author management, see **VG Wort Pro** — contact [b13](https://b13.com) for more information.
+This is the **basic extension** providing pixel tracking only. For pixel pool management, METIS API integration, text registration, and author management, see [**VG Wort Pro**](https://b13.com/products/vg-wort-pro-for-typo3).
 
 ## TYPO3 compatibility
 
@@ -91,8 +91,8 @@ which text a pixel belongs to, who wrote it, and the report to VG Wort itself.
 For a handful of texts that is fine. It stops being fine at a few hundred pages
 and more than one author.
 
-**VG Wort Pro** is a separate extension that does that part. Contact
-[b13](https://b13.com) for more information.
+[**VG Wort Pro**](https://b13.com/products/vg-wort-pro-for-typo3) is a separate
+extension that does that part.
 
 - **Pixel pool.** Import pixels from CSV or order them through the API, then
   assign one to a page by picking it from the pool. Pro keeps track of which are
