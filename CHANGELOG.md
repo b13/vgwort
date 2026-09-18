@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] — 2026-09-17
 
+### Added
+
+- **Releases are published to the TER** when a version tag is pushed.
+- **Tests run on every push and pull request**, against TYPO3 v13 and v14 — the two majors
+  the extension declares support for.
+
 ### Changed
 
 - **First stable release.** Nothing about how the extension works changes with this
@@ -18,11 +24,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   commitment, and its version numbers made every new minor a breaking change for anything
   depending on it.
 
-### Added
+### Removed
 
-- **Releases are published to the TER** when a version tag is pushed.
-- **Tests run on every push and pull request**, against TYPO3 v13 and v14 — the two majors
-  the extension declares support for.
+- **A cache-hash exception for a query parameter this extension never produces.**
+  `vgwort-markers` belongs to VG Wort Pro, which has the middleware and the token that use
+  it; this package referenced it nowhere else. Installing both keeps working, because Pro
+  declares the exception itself from the version that removes it here—update the two
+  together.
 
 ### Fixed
 
