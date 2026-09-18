@@ -2,11 +2,14 @@
 
 Adds a VG Wort tracking pixel field to TYPO3 pages and renders the pixel in the frontend.
 
-This is the **basic extension** providing pixel tracking only. For pixel pool management, METIS API integration, text registration, and author management, see **VG Wort Pro** — contact [b13](https://b13.com) for more information.
+This is the **basic extension** providing pixel tracking only. For pixel pool management, METIS API integration, text registration, and author management, see [**VG Wort Pro**](https://b13.com/products/vg-wort-pro-for-typo3?utm_source=vgwort&utm_medium=readme).
 
 ## TYPO3 compatibility
 
-This extension supports **TYPO3 v14 LTS**.
+This extension supports **TYPO3 v13 LTS and v14 LTS**, on PHP 8.2 and above.
+Both majors are covered by the test suite on every change.
+
+Release notes live in [CHANGELOG.md](CHANGELOG.md).
 
 ## Installation
 
@@ -82,28 +85,80 @@ The extension adds a **VG Wort Tracking Overview** to the Info module (Web > Inf
 
 ## Upgrading to VG Wort Pro
 
-For pixel pool management, METIS API text registration, author management, and a dashboard widget, **VG Wort Pro** is available as a separate extension. Contact [b13](https://b13.com) for more information.
+This extension gives you the field and puts the pixel on the page. Everything
+around it stays manual: where the pixels come from, which ones are still free,
+which text a pixel belongs to, who wrote it, and the report to VG Wort itself.
+For a handful of texts that is fine. It stops being fine at a few hundred pages
+and more than one author.
 
-VG Wort Pro builds on top of this extension and adds:
+[**VG Wort Pro**](https://b13.com/products/vg-wort-pro-for-typo3?utm_source=vgwort&utm_medium=readme) is a separate
+extension that does that part.
 
-- **Pixel Pool** — import/order pixels, auto-assign to pages
-- **Lock field** — pixel field becomes read-only once filled
-- **Author management** — create/verify authors with VG Wort card numbers
-- **Text registration** — extract page content and submit to VG Wort METIS API
-- **Sync** — sync existing registrations from VG Wort
-- **Dashboard widget** — overview of tracking status across sites
+- **Pixel pool.** Import pixels from CSV or order them through the API, then
+  assign one to a page by picking it from the pool. Pro keeps track of which are
+  free and which are taken, and says so before you run out—instead of a
+  spreadsheet next to the backend.
+- **Authors** with their VG Wort card numbers, checked against VG Wort before a
+  text goes out.
+- **Text extraction** from the page as it is actually delivered, not assembled
+  from database fields, so the reported text is the published one.
+- **Reporting.** Pro builds the METIS report and sends it, and reads existing
+  registrations back from VG Wort, so the backend shows what has been reported
+  and what has not.
+- **Checks before sending**, because **a report cannot be corrected** afterwards:
+  the same pixel on two pages, a page that does not actually deliver its pixel, a
+  text that changed since it was prepared, a language missing a part, a METIS
+  limit exceeded.
+- **Texts spread over several pages** as one report: one pixel across all parts,
+  one extract, one webrange with every URL in reading order. You can do that by
+  hand here as well, by putting the same pixel in several pixel fields—what Pro
+  adds is that reading order, extract, and URL list stay in step with the pages.
 
-## Privacy & GDPR
+## Privacy, Cookies, and Consent Banners
 
-VG Wort tracking may be subject to local data protection regulations. It is the responsibility of the site operator to ensure compliance with applicable privacy laws.
+**Do not put the pixel behind a consent banner without checking whether you have
+to.** A pixel that only renders after someone clicks "accept" counts a fraction of
+the accesses, and the counts are what the whole thing is for.
+
+VG Wort states its own position in the *Teilnahmebedingungen für das Online
+Meldesystem T.O.M.*, section 5—July 2026 edition, checked 17 September 2026:
+
+> Klarstellend möchten wir Sie darauf hinweisen, dass im Rahmen der
+> METIS-Zugriffszählung keine personenbezogenen Daten verarbeitet werden. Vor
+> diesem Hintergrund finden die Regelungen der Datenschutzgrundverordnung (DSGVO)
+> und des Bundesdatenschutzgesetzes (BDSG) keine Anwendung auf die
+> METIS-Zugriffszählung.
+>
+> Zudem unterliegt die METIS-Zugriffszählung – einschließlich des dort verwendete
+> Session-Cookies – nach unserer Rechtsauffassung auch nicht dem
+> Einwilligungsbedürfnis nach § 25 Abs. 1 Telekommunikation-Digitale-Dienste-
+> Datenschutz-Gesetz (TDDDG).
+
+That is VG Wort's reading, not ours and not legal advice—the decision belongs to
+whoever answers for privacy on your site. What it does mean is that treating the
+pixel as ordinary consent-gated tracking is a choice with a price, not the obvious
+default.
+
+The same document offers a ready-made passage for your privacy policy, headed
+*Cookies und Meldungen zu Zugriffszahlen*, which explains the pixel, the client ID,
+and the session cookie. Take it from the current *Teilnahmebedingungen* rather than
+from here, so you quote the version that is in force—and check the edition date
+while you are there, because this section was written against the one named above.
+
+Two facts you need for a processor list either way: the counting is carried out for
+VG Wort by Fifty5Blue Deutschland GmbH, Saarbrücken, and the session cookie exists
+to stop the same reader being counted twice within one browser session.
 
 ## License
 
 Like TYPO3 Core, `EXT:vgwort` is licensed under **GPL-2.0-or-later**.
 
-## Background, authors & maintenance
+## Credits
 
-This extension was created by David Steeb in 2025 for [b13 GmbH, Stuttgart](https://b13.com).
+VG Wort was created by David Steeb and is maintained by
+[b13 GmbH](https://b13.com), Stuttgart, Germany.
 
-[Find more TYPO3 extensions we have developed](https://b13.com/useful-typo3-extensions-from-b13-to-you) that help us deliver value in client projects. As part of our work,
-we focus on testing and best practices to ensure long-term performance, reliability, and results in all our code.
+[Find more TYPO3 extensions we have developed](https://b13.com/useful-typo3-extensions-from-b13-to-you?utm_source=vgwort&utm_medium=readme)
+that help us deliver value in client projects. As part of our work, we focus on
+testing and best practices to ensure long-term performance, reliability, and
+results in all our code.

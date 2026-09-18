@@ -1,0 +1,8 @@
+.Build/
+/public/
+var/
+Build/phpunit/.phpunit.cache/
+Build/phpunit/.phpunit.result.cache
+composer.lock
+.idea
+.DS_Store

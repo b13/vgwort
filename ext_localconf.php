@@ -21,6 +21,3 @@ defined('TYPO3') or die();
 $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['vgwort']['contentDoktypes'] ??= [
     PageRepository::DOKTYPE_DEFAULT, // 1 - Standard page
 ];
-
-// Exclude extraction parameter from cHash calculation
-$GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'vgwort-markers';
