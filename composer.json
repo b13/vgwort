@@ -13,7 +13,7 @@
 	],
 	"require": {
 		"php": "^8.2",
-		"typo3/cms-core": "^13 || ^14"
+		"typo3/cms-core": "^13.4 || ^14.3"
 	},
 	"require-dev": {
 		"typo3/testing-framework": "^9.1",
