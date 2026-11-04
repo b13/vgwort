@@ -116,6 +116,8 @@ extension that does that part.
   hand here as well, by putting the same pixel in several pixel fields—what Pro
   adds is that reading order, extract, and URL list stay in step with the pages.
 
+The [full VG Wort Pro documentation](https://b13.com/products/vg-wort-pro-for-typo3/documentation?utm_source=vgwort&utm_medium=readme) walks through setup, the pixel pool, authors, extraction, reporting, and every check.
+
 ## Privacy, Cookies, and Consent Banners
 
 **Do not put the pixel behind a consent banner without checking whether you have
