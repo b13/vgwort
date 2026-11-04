@@ -4,6 +4,8 @@ Adds a VG Wort tracking pixel field to TYPO3 pages and renders the pixel in the 
 
 This is the **basic extension** providing pixel tracking only. For pixel pool management, METIS API integration, text registration, and author management, see [**VG Wort Pro**](https://b13.com/products/vg-wort-pro-for-typo3?utm_source=vgwort&utm_medium=readme).
 
+> **New to VG Wort?** [VG Wort and TYPO3 — what you need to know as a publisher](https://b13.com/knowledge/vg-wort-and-typo3-what-you-need-to-know-as-a-publisher?utm_source=vgwort&utm_medium=readme) explains what the pixel counts, why it matters, and how the free extension and VG Wort Pro fit together.
+
 ## TYPO3 compatibility
 
 This extension supports **TYPO3 v13 LTS and v14 LTS**, on PHP 8.2 and above.
