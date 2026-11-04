@@ -6,3 +6,10 @@
 /.gitattributes export-ignore
 /.gitignore export-ignore
 /.github/ export-ignore
+
+# Config, versioned but not part of the package
+/.claude/ export-ignore
+/CLAUDE.md export-ignore
+
+# Internal documents, versioned but not part of the package
+/.internal/ export-ignore
