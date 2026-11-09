@@ -3,7 +3,7 @@
     data-namespace-typo3-fluid="true"
 >
 
-<f:if condition="{vgwort_pixel}">
+<f:if condition="{vgwort_pixel} && !{vgwort_ignore}">
     <img src="https://{vgwort_domain -> f:or(alternative: 'vg08')}.met.vgwort.de/na/{vgwort_pixel}" width="1" height="1" alt="" role="presentation" style="display: none" loading="eager"/>
 </f:if>
 
