@@ -46,19 +46,31 @@ Check your VG Wort pixel order confirmation for the correct subdomain.
 
 ### Alternative: Fluid partial
 
-If you prefer to control where the pixel is rendered, add the extension's partial path to your template configuration:
+If you prefer to control where the pixel is rendered, use the partial instead of the automatic output.
+
+The site set prints the pixel through `page.1`. Remove that output, or the pixel appears twice:
 
 ```typoscript
-lib.contentElement.partialRootPaths.5 = EXT:vgwort/Resources/Private/Partials
+page.1 >
 ```
 
-Then render the partial in your page template:
+Add the extension's partial path to the partial root paths of the `FLUIDTEMPLATE` object that renders your pages, not
+to `lib.contentElement`, which is for content elements. The path below assumes `page.10` is that object:
+
+```typoscript
+page.10.partialRootPaths.5 = EXT:vgwort/Resources/Private/Partials
+```
+
+Then render the partial in the page template. In a page template the page record is available as `data`:
 
 ```html
 <f:render
   partial="VgwortTracking"
-  arguments="{vgwort_pixel: record.tx_vgwort_pixel, vgwort_ignore: record.tx_vgwort_ignore, vgwort_domain: site.settings.vgwort.domain}"/>
+  arguments="{vgwort_pixel: data.tx_vgwort_pixel, vgwort_ignore: data.tx_vgwort_ignore, vgwort_domain: site.settings.vgwort.domain}"/>
 ```
+
+The `site` variable is only there if the template uses the `SiteProcessor` data processor. Without it, leave out
+`vgwort_domain` and the partial uses `vg08`.
 
 ## Page fields
 

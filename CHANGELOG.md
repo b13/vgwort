@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Documentation
+
+- **The Fluid partial example in the README works as written.** It read the page from `record`,
+  which only exists in content elements, and pointed at `lib.contentElement`. It now uses `data`
+  in the page template, names the `SiteProcessor` the `site` variable needs, and says to remove
+  `page.1` so the pixel is not printed twice. The functional test renders the partial the same
+  way.
+
 ## [1.0.1] — 2026-11-09
 
 ### Changed

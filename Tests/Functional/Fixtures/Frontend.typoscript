@@ -4,21 +4,15 @@
 
 page = PAGE
 
-# The Fluid partial is rendered next to the TypoScript output so both paths are covered.
+# The Fluid partial is rendered the way the README describes, next to the TypoScript output
+# of the site set, so both paths are covered.
 page.20 = FLUIDTEMPLATE
 page.20 {
   template = TEXT
   template.value (
-    <f:render partial="VgwortTracking" arguments="{vgwort_pixel: pixel, vgwort_ignore: ignore, vgwort_domain: domain}"/>
+    <f:render partial="VgwortTracking" arguments="{vgwort_pixel: data.tx_vgwort_pixel, vgwort_ignore: data.tx_vgwort_ignore, vgwort_domain: site.settings.vgwort.domain}"/>
   )
-  partialRootPaths.0 = EXT:vgwort/Resources/Private/Partials
-  variables {
-    pixel = TEXT
-    pixel.field = tx_vgwort_pixel
-    ignore = TEXT
-    ignore.field = tx_vgwort_ignore
-    domain = TEXT
-    domain.value = vg08
-  }
+  partialRootPaths.5 = EXT:vgwort/Resources/Private/Partials
+  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
   stdWrap.wrap = <!--partial-->|<!--/partial-->
 }
