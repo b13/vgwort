@@ -79,6 +79,24 @@ final class PixelRenderingTest extends FunctionalTestCase
         $this->assertPixel($expectedSrc, $this->between($html, '<!--partial-->', '<!--/partial-->'));
     }
 
+    #[Test]
+    public function typoScriptOutputEscapesThePixelValue(): void
+    {
+        $html = $this->render('x" onerror="alert(1)', 0);
+        $typoScriptOutput = $this->between($html, '<body', '<!--partial-->');
+
+        $this->assertValueStaysInsideSrc($typoScriptOutput);
+    }
+
+    #[Test]
+    public function partialOutputEscapesThePixelValue(): void
+    {
+        $html = $this->render('x" onerror="alert(1)', 0);
+        $partialOutput = $this->between($html, '<!--partial-->', '<!--/partial-->');
+
+        $this->assertValueStaysInsideSrc($partialOutput);
+    }
+
     private function render(string $pixel, int $ignore): string
     {
         GeneralUtility::makeInstance(ConnectionPool::class)
@@ -99,6 +117,21 @@ final class PixelRenderingTest extends FunctionalTestCase
         self::assertSame(200, $response->getStatusCode(), substr((string)$response->getBody(), 0, 1500));
 
         return (string)$response->getBody();
+    }
+
+    /**
+     * Whatever the value contains, it must stay inside `src` and not become an attribute.
+     */
+    private function assertValueStaysInsideSrc(string $html): void
+    {
+        $document = new \DOMDocument();
+        $document->loadHTML('<!DOCTYPE html><body>' . $html, LIBXML_NOERROR);
+        $images = $document->getElementsByTagName('img');
+
+        self::assertSame(1, $images->length);
+        $image = $images->item(0);
+        self::assertFalse($image->hasAttribute('onerror'));
+        self::assertSame('https://vg08.met.vgwort.de/na/x" onerror="alert(1)', $image->getAttribute('src'));
     }
 
     private function assertPixel(?string $expectedSrc, string $html): void

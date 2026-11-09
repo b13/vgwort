@@ -35,6 +35,7 @@ call_user_func(function () {
                 'type' => 'input',
                 'size' => 30,
                 'max' => 50,
+                'eval' => 'trim',
             ],
         ],
     ]);
