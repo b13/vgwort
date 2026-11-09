@@ -55,6 +55,8 @@ final class PixelRenderingTest extends FunctionalTestCase
         return [
             'pixel set' => ['abc123', 0, 'https://vg08.met.vgwort.de/na/abc123'],
             'no pixel' => ['', 0, null],
+            'ignored page with pixel' => ['abc123', 1, null],
+            'ignored page without pixel' => ['', 1, null],
         ];
     }
 

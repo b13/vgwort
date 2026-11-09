@@ -57,7 +57,7 @@ Then render the partial in your page template:
 ```html
 <f:render
   partial="VgwortTracking"
-  arguments="{vgwort_pixel: record.tx_vgwort_pixel, vgwort_domain: site.settings.vgwort.domain}"/>
+  arguments="{vgwort_pixel: record.tx_vgwort_pixel, vgwort_ignore: record.tx_vgwort_ignore, vgwort_domain: site.settings.vgwort.domain}"/>
 ```
 
 ## Page fields
