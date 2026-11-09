@@ -26,7 +26,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.2
-          extensions: intl, mbstring, json, zip, curl
+          extensions: intl, mbstring, json, zip, curl, sqlite3, pdo_sqlite
 
       - name: Install dependencies
         run: |
@@ -41,3 +41,8 @@ jobs:
 
       - name: Unit tests
         run: .Build/bin/phpunit -c Build/phpunit/UnitTests.xml
+
+      - name: Functional tests
+        env:
+          typo3DatabaseDriver: pdo_sqlite
+        run: .Build/bin/phpunit -c Build/phpunit/FunctionalTests.xml
