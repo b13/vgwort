@@ -14,8 +14,8 @@ namespace B13\Vgwort\Tests\Unit\Service;
 
 use B13\Vgwort\Service\VgwortSettingsService;
 use PHPUnit\Framework\Attributes\Test;
-use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
+use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
