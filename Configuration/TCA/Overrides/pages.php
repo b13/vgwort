@@ -10,6 +10,7 @@
 
 declare(strict_types=1);
 
+use B13\Vgwort\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') or die();
@@ -42,9 +43,7 @@ call_user_func(function () {
 
     // Add VG Wort tab only to configured content doktypes
     // Default is doktype 1 (standard page), integrators can extend via ext_localconf.php
-    $contentDoktypes = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['vgwort']['contentDoktypes'] ?? [1];
-
-    foreach ($contentDoktypes as $doktype) {
+    foreach (ExtensionConfiguration::getContentDoktypes() as $doktype) {
         ExtensionManagementUtility::addToAllTCAtypes(
             'pages',
             '--div--;vgwort.db:pages.tabs.vgwort,--palette--;;vgwort_tracking',
