@@ -1,0 +1,24 @@
+# The test helper writes a root template with `clear = 3`, which also drops the TypoScript
+# the site set contributes. Importing the set's setup here puts it back.
+@import 'EXT:vgwort/Configuration/Sets/vgwort/setup.typoscript'
+
+page = PAGE
+
+# The Fluid partial is rendered next to the TypoScript output so both paths are covered.
+page.20 = FLUIDTEMPLATE
+page.20 {
+  template = TEXT
+  template.value (
+    <f:render partial="VgwortTracking" arguments="{vgwort_pixel: pixel, vgwort_ignore: ignore, vgwort_domain: domain}"/>
+  )
+  partialRootPaths.0 = EXT:vgwort/Resources/Private/Partials
+  variables {
+    pixel = TEXT
+    pixel.field = tx_vgwort_pixel
+    ignore = TEXT
+    ignore.field = tx_vgwort_ignore
+    domain = TEXT
+    domain.value = vg08
+  }
+  stdWrap.wrap = <!--partial-->|<!--/partial-->
+}
