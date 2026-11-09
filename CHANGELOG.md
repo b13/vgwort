@@ -7,6 +7,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] — 2026-11-09
+
+### Changed
+
+- **`typo3/cms-frontend` is a declared requirement.** The extension ships TypoScript and a
+  Fluid partial for the frontend but only required `typo3/cms-core`. `typo3/cms-info`, which
+  provides the overview in the Info module, is suggested.
+- **The TCA override reads the content doktypes from `ExtensionConfiguration`.** It kept its
+  own copy of the same lookup. The method and its result are unchanged.
+
+### Fixed
+
+- **The Fluid partial `VgwortTracking` renders again.** It called `f:or` with an argument
+  that does not exist, so using it threw an exception on TYPO3 v13 and v14 instead of
+  printing the pixel.
+- **Pages marked "Ignore for VG Wort" no longer print a pixel.** The field is hidden once
+  the page is ignored but keeps its value, and `page.1` and the partial rendered it anyway.
+  The partial takes an optional `vgwort_ignore` argument; calls without it behave as before.
+- **A version that does not match the tag stops the TER upload.** A tag that disagreed with
+  `ext_emconf.php` or `composer.json` used to publish a package reporting the wrong version.
+
+### Security
+
+- **The pixel value is escaped in the TypoScript output.** A quote in the field could end the
+  `src` attribute and add attributes to the `img` tag. Only backend editors could enter such a
+  value. The field also trims whitespace now. The Fluid partial already escaped the value.
+
+### Tests
+
+- **Functional tests render a real frontend page** and check the HTML from `page.1` and from
+  the partial, for a pixel, no pixel, an ignored page and a value with quotes. Unit tests
+  cover the doktype configuration and the TCA override. CI runs both against TYPO3 v13 and
+  v14.
+
 ## [1.0.0] — 2026-11-04
 
 ### Added
