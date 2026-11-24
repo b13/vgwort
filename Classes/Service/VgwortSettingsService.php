@@ -15,6 +15,11 @@ namespace B13\Vgwort\Service;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Site\SiteFinder;
 
+/**
+ * @deprecated The extension does not use this class itself. It reads settings only Pro
+ *             needs (API access, test mode, publisher account) and will be removed in
+ *             version 2.0. Read the site settings through `Site::getSettings()` instead.
+ */
 final class VgwortSettingsService
 {
     public function __construct(

@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Deprecated
+
+- **`VgwortSettingsService` is deprecated and will be removed in 2.0.** The extension does not
+  use the class itself. It reads the API access, the test mode and the publisher account, which
+  only the Pro extension needs, and Pro now ships its own class for that. Code that reads the
+  site settings can use `Site::getSettings()`. The class stays in 1.x and behaves as before.
+
 ### Documentation
 
 - **The Fluid partial example in the README works as written.** It read the page from `record`,
